@@ -6,7 +6,7 @@ import NumberOfEvents from "../NumberOfEvents";
 const feature = loadFeature("./src/features/specifyNumberOfEvents.feature");
 
 defineFeature(feature, (test) => {
-  test("When user hasn’t specified a number, 5 is the default number.", ({
+  test("When user hasn’t specified a number, 6 is the default number.", ({
     given,
     when,
     then,
@@ -17,9 +17,9 @@ defineFeature(feature, (test) => {
       AppWrapper = shallow(<App />);
     });
 
-    then("the user can see 5 events", () => {
+    then("the user can see 6 events", () => {
       AppWrapper.update();
-      expect(AppWrapper.state("events")).toHaveLength(5);
+      expect(AppWrapper.state("events")).toHaveLength(6);
     });
   });
 
