@@ -11,7 +11,7 @@ class App extends Component {
     events: [],
     allEvents: [],
     locations: [],
-    numberOfEvents: 21,
+    numberOfEvents: 12,
     currentLocation: "all",
   };
 

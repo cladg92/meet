@@ -40,7 +40,7 @@ User story: As a user I should be able to “Show/hide an event’s details” S
 
 User story: As a user I should be able to “Specify number of events” So that I can set the number of visible events I see on the page
 
-- _SCENARIO 1_: When user hasn’t specified a number, 21 is the default number.
+- _SCENARIO 1_: When user hasn’t specified a number, 12 is the default number.
   **Given** user hasn’t specified a number of events
   **When** the user opens the app
   **Then** the user can see 32 events
