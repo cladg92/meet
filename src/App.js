@@ -5,6 +5,7 @@ import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
+import { Navbar, Container, Row, Col } from "react-bootstrap";
 
 class App extends Component {
   state = {
@@ -64,18 +65,42 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NumberOfEvents
-          numberOfEvents={this.state.numberOfEvents}
-          handleInputChanged={this.handleInputChanged}
-        />
+        <Navbar bg="warning" sticky="top">
+          <Container fluid>
+            <Container fluid>
+              <Row>
+                <Col xs={12} sm={12} md={8} lg={9}>
+                  <Navbar.Brand href="/" className="page-title">
+                    <img
+                      alt=""
+                      src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/512/Globe-icon.png"
+                      width="30"
+                      height="30"
+                      className="d-inline-block align-top"
+                    />{" "}
+                    Meet App
+                  </Navbar.Brand>
+                </Col>
+                <Col xs={2} sm={3} md={1} lg={1}>
+                  <NumberOfEvents
+                    numberOfEvents={this.state.numberOfEvents}
+                    handleInputChanged={this.handleInputChanged}
+                  />
+                </Col>
+                <Col xs={8} sm={3} md={3} lg={2}>
+                  <CitySearch
+                    className="CitySearch"
+                    locations={this.state.locations}
+                    updateEvents={this.updateEvents}
+                    numberOfEvents={this.state.numberOfEvents}
+                    setSelected={this.setSelected}
+                  />
+                </Col>
+              </Row>
+            </Container>
+          </Container>
+        </Navbar>
 
-        <CitySearch
-          className="CitySearch"
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
-          numberOfEvents={this.state.numberOfEvents}
-          setSelected={this.setSelected}
-        />
         <EventList className="EventList" events={this.state.events} />
       </div>
     );

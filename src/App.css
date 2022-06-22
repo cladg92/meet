@@ -13,6 +13,10 @@ ul {
   list-style: none;
 }
 
+.page-title {
+  font-weight: 700;
+}
+
 .number,
 .city {
   width: 250px;
@@ -26,7 +30,6 @@ ul {
   max-width: 300px;
   margin: auto;
   position: relative;
-  margin-bottom: 17px;
 }
 
 input[type="text"],
@@ -41,8 +44,16 @@ input[type="number"] {
   height: 38px;
 }
 
+input[type="text"] {
+  width: 175px;
+}
+
+input[type="number"] {
+  width: 75px;
+}
+
 .suggestions {
-  width: 250px;
+  width: 175px;
   position: absolute;
   z-index: 2;
   align-self: center;
@@ -79,6 +90,8 @@ input[type="number"] {
 }
 
 /*
+
+
 
 
 p {
