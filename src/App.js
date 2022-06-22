@@ -70,7 +70,7 @@ class App extends Component {
             <Container fluid>
               <Row>
                 <Col xs={12} sm={12} md={8} lg={9}>
-                  <Navbar.Brand href="/" className="page-title">
+                  <Navbar.Brand href="/meet" className="page-title">
                     <img
                       alt=""
                       src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/512/Globe-icon.png"
