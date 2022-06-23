@@ -5,7 +5,7 @@ import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
-import { Navbar, Container, Row, Col } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 
 class App extends Component {
   state = {
@@ -41,11 +41,19 @@ class App extends Component {
       currentLocation === "all"
         ? allEvents
         : allEvents.filter((event) => event.location === currentLocation);
-    this.setState({
-      numberOfEvents: value,
-      events: locationEvents.slice(0, value),
-    });
-    console.log(allEvents.length);
+    if (value <= 0 || value > 250) {
+      this.setState({
+        numberOfEvents: value,
+        events: locationEvents.slice(0, value),
+        ErrorText: "Select number from 1 to 250",
+      });
+    } else {
+      return this.setState({
+        numberOfEvents: value,
+        events: locationEvents.slice(0, value),
+        ErrorText: "",
+      });
+    }
   };
 
   updateEvents = (location, eventCount) => {
@@ -80,9 +88,11 @@ class App extends Component {
             </Navbar.Brand>
           </Container>
         </Navbar>
+        <br></br>
         <NumberOfEvents
           numberOfEvents={this.state.numberOfEvents}
           handleInputChanged={this.handleInputChanged}
+          errorText={this.state.ErrorText}
         />
         <CitySearch
           className="CitySearch"
@@ -91,6 +101,7 @@ class App extends Component {
           numberOfEvents={this.state.numberOfEvents}
           setSelected={this.setSelected}
         />
+        <br></br>
         <EventList className="EventList" events={this.state.events} />
       </div>
     );

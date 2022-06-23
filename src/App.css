@@ -20,6 +20,7 @@ ul {
 .number,
 .city {
   width: 250px;
+  margin-top: 1.5rem;
 }
 
 .CitySearch,
@@ -58,7 +59,7 @@ input[type="number"] {
   z-index: 2;
   align-self: center;
   margin: 0;
-  top: 53px;
+  top: 75px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }

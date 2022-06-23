@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { ErrorAlert } from "./Alert";
+import { Row, Col } from "react-bootstrap";
 
 class NumberOfEvents extends Component {
   render() {
     return (
       <div className="NumberOfEvents">
-        <ErrorAlert />
+        <ErrorAlert className="error-alert" text={this.props.errorText} />
         <input
           type="number"
           className="number"
