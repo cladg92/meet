@@ -19,6 +19,7 @@ class App extends Component {
 
   componentDidMount() {
     this.mounted = true;
+    this.promptOfflineWarning();
     getEvents().then((events) => {
       if (this.mounted) {
         this.setState({
@@ -27,17 +28,24 @@ class App extends Component {
           locations: extractLocations(events),
         });
       }
-      if (!navigator.onLine) {
-        this.setState({
-          ErrorText: "Warning: ",
-        });
-      }
     });
   }
 
   componentWillUnmount() {
     this.mounted = false;
   }
+
+  promptOfflineWarning = () => {
+    if (!navigator.onLine) {
+      this.setState({
+        WarningText: "Warning: you are viewing an offline version of this page",
+      });
+    } else {
+      return this.setState({
+        ErrorText: "",
+      });
+    }
+  };
 
   handleInputChanged = (event) => {
     const value = event.target.value;
@@ -73,7 +81,6 @@ class App extends Component {
         events: filteredEvents,
         currentLocation: location,
       });
-      console.log(this.state.currentLocation);
     });
   };
 
