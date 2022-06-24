@@ -6,6 +6,7 @@ import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import { Navbar, Container } from "react-bootstrap";
+import { WarningAlert } from "./Alert";
 
 class App extends Component {
   state = {
@@ -24,6 +25,11 @@ class App extends Component {
           events: events.slice(0, this.state.numberOfEvents),
           allEvents: events,
           locations: extractLocations(events),
+        });
+      }
+      if (!navigator.onLine) {
+        this.setState({
+          ErrorText: "Warning: ",
         });
       }
     });
@@ -102,6 +108,7 @@ class App extends Component {
           setSelected={this.setSelected}
         />
         <br></br>
+        <WarningAlert className="warning-alert" text={this.state.WarningText} />
         <EventList className="EventList" events={this.state.events} />
       </div>
     );
