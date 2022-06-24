@@ -79,7 +79,7 @@ class App extends Component {
             <Navbar.Brand href="/meet" className="page-title">
               <img
                 alt=""
-                src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/512/Globe-icon.png"
+                src="https://raw.githubusercontent.com/Glenzy/meet/master/public/meet-app-192.png"
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
