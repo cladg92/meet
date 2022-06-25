@@ -98,20 +98,7 @@ class App extends Component {
       return <div className="App" />;
     return (
       <div className="App">
-        <Navbar bg="warning" sticky="top">
-          <Container fluid>
-            <Navbar.Brand href="/meet" className="page-title">
-              <img
-                alt=""
-                src="https://raw.githubusercontent.com/Glenzy/meet/master/public/meet-app-192.png"
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-              />{" "}
-              Meet App
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
+        <h1>Meet App</h1>
         <br></br>
         <NumberOfEvents
           numberOfEvents={this.state.numberOfEvents}
