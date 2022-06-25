@@ -37,10 +37,11 @@ class CitySearch extends Component {
     return (
       <div className="CitySearch">
         <InfoAlert text={this.state.infoText} />
-        <label>Choose the nearest city:</label>
+        <label for="city">Choose the nearest city:</label>
         <input
           type="text"
           className="city"
+          id="city"
           value={this.state.query}
           onChange={this.handleInputChanged}
           onFocus={() => {
