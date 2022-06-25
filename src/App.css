@@ -15,7 +15,8 @@ ul {
 
 .page-title {
   font-weight: 700;
-  align-self: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .number,
