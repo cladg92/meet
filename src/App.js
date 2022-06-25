@@ -5,7 +5,7 @@ import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
-import { Navbar, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { WarningAlert } from "./Alert";
 import WelcomeScreen from "./WelcomeScreen";
 
@@ -98,20 +98,26 @@ class App extends Component {
       return <div className="App" />;
     return (
       <div className="App">
-        <h1>Meet App</h1>
+        <h1 className="page-title">Meet App</h1>
         <br></br>
-        <NumberOfEvents
-          numberOfEvents={this.state.numberOfEvents}
-          handleInputChanged={this.handleInputChanged}
-          errorText={this.state.ErrorText}
-        />
-        <CitySearch
-          className="CitySearch"
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
-          numberOfEvents={this.state.numberOfEvents}
-          setSelected={this.setSelected}
-        />
+        <Row>
+          <Col>
+            <NumberOfEvents
+              numberOfEvents={this.state.numberOfEvents}
+              handleInputChanged={this.handleInputChanged}
+              errorText={this.state.ErrorText}
+            />
+          </Col>
+          <Col>
+            <CitySearch
+              className="CitySearch"
+              locations={this.state.locations}
+              updateEvents={this.updateEvents}
+              numberOfEvents={this.state.numberOfEvents}
+              setSelected={this.setSelected}
+            />
+          </Col>
+        </Row>
         <br></br>
         <WarningAlert className="warning-alert" text={this.state.WarningText} />
         <EventList className="EventList" events={this.state.events} />
