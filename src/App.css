@@ -47,15 +47,15 @@ input[type="number"] {
 }
 
 input[type="text"] {
-  width: 175px;
+  width: 200px;
 }
 
 input[type="number"] {
-  width: 75px;
+  width: 200px;
 }
 
 .suggestions {
-  width: 175px;
+  width: 200px;
   position: absolute;
   z-index: 2;
   align-self: center;
