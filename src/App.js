@@ -4,9 +4,10 @@ import "./nprogress.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
-import { getEvents, extractLocations } from "./api";
+import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
 import { Navbar, Container } from "react-bootstrap";
 import { WarningAlert } from "./Alert";
+import WelcomeScreen from "./WelcomeScreen";
 
 class App extends Component {
   state = {
@@ -15,11 +16,19 @@ class App extends Component {
     locations: [],
     numberOfEvents: 12,
     currentLocation: "all",
+    showWelcomeScreen: undefined,
   };
 
   componentDidMount() {
     this.mounted = true;
     this.promptOfflineWarning();
+    const accessToken = localStorage.getItem('access_token');
+const isTokenValid = (await checkToken(accessToken)).error ? false :
+true;
+const searchParams = new URLSearchParams(window.location.search);
+const code = searchParams.get("code");
+this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+if ((code || isTokenValid) && this.mounted) {
     getEvents().then((events) => {
       if (this.mounted) {
         this.setState({
@@ -85,6 +94,8 @@ class App extends Component {
   };
 
   render() {
+    if (this.state.showWelcomeScreen === undefined)
+      return <div className="App" />;
     return (
       <div className="App">
         <Navbar bg="warning" sticky="top">
@@ -117,6 +128,12 @@ class App extends Component {
         <br></br>
         <WarningAlert className="warning-alert" text={this.state.WarningText} />
         <EventList className="EventList" events={this.state.events} />
+        <WelcomeScreen
+          showWelcomeScreen={this.state.showWelcomeScreen}
+          getAccessToken={() => {
+            getAccessToken();
+          }}
+        />
       </div>
     );
   }
