@@ -4,10 +4,11 @@ import "./nprogress.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
-import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
+import { getEvents, extractLocations } from "./api";
+//checkToken, getAccessToken
 import { Row, Col } from "react-bootstrap";
 import { WarningAlert } from "./Alert";
-import WelcomeScreen from "./WelcomeScreen";
+//import WelcomeScreen from "./WelcomeScreen";
 
 class App extends Component {
   state = {
@@ -16,29 +17,29 @@ class App extends Component {
     locations: [],
     numberOfEvents: 12,
     currentLocation: "all",
-    showWelcomeScreen: undefined,
+    //showWelcomeScreen: undefined,
   };
 
   async componentDidMount() {
     this.mounted = true;
-    const accessToken = localStorage.getItem("access_token");
+    this.promptOfflineWarning();
+    /*const accessToken = localStorage.getItem("access_token");
     const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-    if ((code || isTokenValid) && this.mounted) {
-      this.promptOfflineWarning();
-      getEvents().then((events) => {
-        if (this.mounted) {
-          this.setState({
-            events: events.slice(0, this.state.numberOfEvents),
-            allEvents: events,
-            locations: extractLocations(events),
-          });
-        }
-      });
-    }
+    if ((code || isTokenValid) && this.mounted) {*/
+    getEvents().then((events) => {
+      if (this.mounted) {
+        this.setState({
+          events: events.slice(0, this.state.numberOfEvents),
+          allEvents: events,
+          locations: extractLocations(events),
+        });
+      }
+    });
   }
+  //}
 
   componentWillUnmount() {
     this.mounted = false;
@@ -94,8 +95,8 @@ class App extends Component {
   };
 
   render() {
-    if (this.state.showWelcomeScreen === undefined)
-      return <div className="App" />;
+    /*if (this.state.showWelcomeScreen === undefined)
+      return <div className="App" />;*/
     return (
       <div className="App">
         <h1 className="page-title">Meet App</h1>
@@ -121,12 +122,12 @@ class App extends Component {
         <br></br>
         <WarningAlert className="warning-alert" text={this.state.WarningText} />
         <EventList className="EventList" events={this.state.events} />
-        <WelcomeScreen
+        {/*<WelcomeScreen
           showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => {
             getAccessToken();
           }}
-        />
+        />*/}
       </div>
     );
   }
