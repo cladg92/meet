@@ -52,7 +52,7 @@ input[type="number"] {
   font-weight: 500;
 }
 
-.alert {
+.Alert {
   position: absolute;
   z-index: 2;
   align-self: center;
