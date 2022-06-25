@@ -10,7 +10,7 @@ class Alert extends Component {
     return {
       color: this.color,
       fontStyle: "italic",
-      fontSize: "10px",
+      fontSize: "12px",
       fontWeight: "600",
     };
   };
