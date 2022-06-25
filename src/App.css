@@ -61,6 +61,14 @@ input[type="number"] {
   top: 25px;
 }
 
+.warning-alert {
+  position: absolute;
+  z-index: 2;
+  align-self: center;
+  margin: 0;
+  top: 35px;
+}
+
 .suggestions {
   width: 180px;
   position: absolute;
