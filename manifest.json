@@ -17,7 +17,7 @@
     {
       "src": "world.png",
       "type": "image/png",
-      "sizes": "512x512",
+      "sizes": "62x62",
       "purpose": "any maskable"
     }
   ],
