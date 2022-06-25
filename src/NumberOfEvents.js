@@ -6,7 +6,9 @@ class NumberOfEvents extends Component {
     return (
       <div className="NumberOfEvents">
         <ErrorAlert className="error-alert" text={this.props.errorText} />
-        <label for="number">Events in the next 7 days:</label>
+        <label for="number" className="label">
+          Events in the next 7 days:
+        </label>
         <input
           type="number"
           id="number"

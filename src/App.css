@@ -54,6 +54,10 @@ input[type="number"] {
   width: 200px;
 }
 
+.label {
+  align-self: center;
+}
+
 .suggestions {
   width: 200px;
   position: absolute;
