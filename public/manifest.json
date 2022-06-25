@@ -11,13 +11,13 @@
     {
       "src": "world.png",
       "type": "image/png",
-      "sizes": "62x62",
+      "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
       "src": "world2.png",
       "type": "image/png",
-      "sizes": "62x62",
+      "sizes": "512x512",
       "purpose": "any maskable"
     }
   ],
