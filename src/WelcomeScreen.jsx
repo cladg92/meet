@@ -1,8 +1,10 @@
 import React from "react";
 import "./WelcomeScreen.css";
+import { Card } from "react-bootstrap";
+
 function WelcomeScreen(props) {
   return props.showWelcomeScreen ? (
-    <div className="WelcomeScreen">
+    <Card className="WelcomeScreen">
       <h1>Welcome to the Meet app</h1>
       <h4>
         Log in to see upcoming events around the world for full-stack developers
@@ -35,7 +37,7 @@ o.svg"
       >
         Privacy policy
       </a>
-    </div>
+    </Card>
   ) : null;
 }
 export default WelcomeScreen;
