@@ -54,7 +54,10 @@ input[type="number"] {
 
 .alert {
   position: absolute;
-  top: 3px;
+  z-index: 2;
+  align-self: center;
+  margin: 0;
+  top: 10px;
 }
 
 .suggestions {

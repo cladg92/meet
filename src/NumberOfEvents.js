@@ -5,11 +5,7 @@ class NumberOfEvents extends Component {
   render() {
     return (
       <div className="NumberOfEvents">
-        <ErrorAlert
-          className="error-alert"
-          text={this.props.errorText}
-          className="alert"
-        />
+        <ErrorAlert className="alert error-alert" text={this.props.errorText} />
         <label for="number" className="label">
           Events in the next 7 days:
         </label>
