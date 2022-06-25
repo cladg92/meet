@@ -58,7 +58,7 @@ input[type="number"] {
   z-index: 2;
   align-self: center;
   margin: 0;
-  top: -15px;
+  top: 15px;
 }
 
 .suggestions {
