@@ -101,14 +101,14 @@ class App extends Component {
         <h1 className="page-title">Meet App</h1>
         <br></br>
         <Row className="justify-content-md-center">
-          <Col md={3}>
+          <Col md={2}>
             <NumberOfEvents
               numberOfEvents={this.state.numberOfEvents}
               handleInputChanged={this.handleInputChanged}
               errorText={this.state.ErrorText}
             />
           </Col>
-          <Col md={3}>
+          <Col md={2}>
             <CitySearch
               className="CitySearch"
               locations={this.state.locations}

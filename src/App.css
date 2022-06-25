@@ -44,18 +44,12 @@ input[type="number"] {
   line-height: 20px;
   align-self: center;
   height: 38px;
-}
-
-input[type="text"] {
-  width: 200px;
-}
-
-input[type="number"] {
-  width: 200px;
+  width: 180px;
 }
 
 .label {
   align-self: center;
+  font-weight: 500;
 }
 
 .suggestions {
