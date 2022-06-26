@@ -33,25 +33,13 @@ class Event extends Component {
                 {this.props.event.description}
               </p>
             ) : null}
-            {this.state.show && (
-              <Button
-                className="button"
-                variant="warning"
-                onClick={() => this.handleShowDetails(this.state)}
-              >
-                hide details
-              </Button>
-            )}
-
-            {!this.state.show && (
-              <Button
-                className="button"
-                variant="warning"
-                onClick={() => this.handleShowDetails(this.state)}
-              >
-                show details
-              </Button>
-            )}
+            <Button
+              className="button"
+              variant="warning"
+              onClick={() => this.handleShowDetails(this.state)}
+            >
+              {this.state.show ? "Hide details" : "Show details"}
+            </Button>
           </Card.Body>
         </Card>
       </div>
