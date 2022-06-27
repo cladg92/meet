@@ -171,6 +171,7 @@ class App extends Component {
               </ResponsiveContainer>
             </Col>
             <Col xl={6}>
+              <br></br>
               <h5>Type of events</h5>
               <EventGenre events={events} />
             </Col>
