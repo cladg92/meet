@@ -155,10 +155,10 @@ class App extends Component {
             <CartesianGrid />
             <XAxis type="category" dataKey="city" name="city" />
             <YAxis
+              allowDecimals={false}
               type="number"
               dataKey="number"
               name="number of events"
-              allowDecimals={false}
             />
             <Tooltip cursor={{ strokeDasharray: "3 3" }} />
             <Scatter data={this.getData()} fill="#8884d8" />
