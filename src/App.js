@@ -146,7 +146,7 @@ class App extends Component {
 
         <div className="data-vis-wrapper">
           <Row>
-            <Col xs={12} sm={7}>
+            <Col lg={7}>
               <h5>Events in each city</h5>
               <ResponsiveContainer height={400}>
                 <ScatterChart
@@ -170,7 +170,7 @@ class App extends Component {
                 </ScatterChart>
               </ResponsiveContainer>
             </Col>
-            <Col xs={12} sm={5}>
+            <Col lg={5}>
               <h5>Type of events</h5>
               <EventGenre events={events} />
             </Col>
