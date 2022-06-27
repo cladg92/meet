@@ -9,6 +9,15 @@ import { getEvents, extractLocations } from "./api";
 import { Row, Col } from "react-bootstrap";
 import { WarningAlert } from "./Alert";
 //import WelcomeScreen from "./WelcomeScreen";
+import {
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 class App extends Component {
   state = {
@@ -69,7 +78,7 @@ class App extends Component {
       this.setState({
         numberOfEvents: value,
         events: locationEvents.slice(0, value),
-        ErrorText: "Select number from 1 to 250",
+        ErrorText: `Select number from 1 to ${this.state.allEvents.length}`,
       });
     } else {
       return this.setState({
@@ -94,6 +103,18 @@ class App extends Component {
     });
   };
 
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter(
+        (event) => event.location === location
+      ).length;
+      const city = location.split(", ").shift();
+      return { city, number };
+    });
+    return data;
+  };
+
   render() {
     /*if (this.state.showWelcomeScreen === undefined)
       return <div className="App" />;*/
@@ -103,13 +124,6 @@ class App extends Component {
         <br></br>
         <Row className="justify-content-md-center">
           <Col sm={12} md={3}>
-            <NumberOfEvents
-              numberOfEvents={this.state.numberOfEvents}
-              handleInputChanged={this.handleInputChanged}
-              errorText={this.state.ErrorText}
-            />
-          </Col>
-          <Col sm={12} md={3}>
             <CitySearch
               className="CitySearch"
               locations={this.state.locations}
@@ -118,8 +132,38 @@ class App extends Component {
               setSelected={this.setSelected}
             />
           </Col>
+          <Col sm={12} md={3}>
+            <NumberOfEvents
+              numberOfEvents={this.state.numberOfEvents}
+              handleInputChanged={this.handleInputChanged}
+              errorText={this.state.ErrorText}
+            />
+          </Col>
         </Row>
         <br></br>
+        <h5 className="page-title">Events in each city</h5>
+
+        <ResponsiveContainer height={400}>
+          <ScatterChart
+            margin={{
+              top: 20,
+              right: 20,
+              bottom: 20,
+              left: 20,
+            }}
+          >
+            <CartesianGrid />
+            <XAxis type="category" dataKey="city" name="city" />
+            <YAxis
+              type="number"
+              dataKey="number"
+              name="number of events"
+              allowDecimals={false}
+            />
+            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+            <Scatter data={this.getData()} fill="#8884d8" />
+          </ScatterChart>
+        </ResponsiveContainer>
         <WarningAlert className="warning-alert" text={this.state.WarningText} />
         <EventList className="EventList" events={this.state.events} />
         {/*<WelcomeScreen
