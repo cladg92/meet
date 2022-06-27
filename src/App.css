@@ -106,6 +106,9 @@ input[type="number"] {
   font-weight: 500;
 }
 
+.recharts-tooltip-label {
+  display: none;
+}
 /*
 
 
