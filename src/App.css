@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
-/*.App {
+.App {
   text-align: center;
   padding: 2% 5%;
 }
 
 .App * {
   box-sizing: border-box;
-}*/
+}
 
 ul {
   padding: 0;
@@ -16,7 +16,6 @@ ul {
 .page-title {
   font-weight: 700;
   text-align: center;
-  margin-bottom: 1.5rem;
 }
 
 .number,
@@ -109,6 +108,14 @@ input[type="number"] {
 .recharts-tooltip-label {
   display: none;
 }
+
+.data-vis-wrapper,
+.CitySearch,
+.NumberOfEvents,
+.EventList {
+  margin-top: 65px;
+}
+
 /*
 
 

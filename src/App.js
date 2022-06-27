@@ -143,32 +143,40 @@ class App extends Component {
           </Col>
         </Row>
         <br></br>
-        <h5 className="page-title">Events in each city</h5>
 
         <div className="data-vis-wrapper">
-          <EventGenre events={events} />
-          <ResponsiveContainer height={400}>
-            <ScatterChart
-              margin={{
-                top: 20,
-                right: 20,
-                bottom: 20,
-                left: 20,
-              }}
-            >
-              <CartesianGrid />
-              <XAxis type="category" dataKey="city" name="city" />
-              <YAxis
-                allowDecimals={false}
-                type="number"
-                dataKey="number"
-                name="number of events"
-              />
-              <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-              <Scatter data={this.getData()} fill="#8884d8" />
-            </ScatterChart>
-          </ResponsiveContainer>
+          <Row>
+            <Col xs={12} sm={7}>
+              <h5>Events in each city</h5>
+              <ResponsiveContainer height={400}>
+                <ScatterChart
+                  margin={{
+                    top: 20,
+                    right: 20,
+                    bottom: 20,
+                    left: 20,
+                  }}
+                >
+                  <CartesianGrid />
+                  <XAxis type="category" dataKey="city" name="city" />
+                  <YAxis
+                    allowDecimals={false}
+                    type="number"
+                    dataKey="number"
+                    name="number of events"
+                  />
+                  <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                  <Scatter data={this.getData()} fill="#8884d8" />
+                </ScatterChart>
+              </ResponsiveContainer>
+            </Col>
+            <Col xs={12} sm={5}>
+              <h5>Type of events</h5>
+              <EventGenre events={events} />
+            </Col>
+          </Row>
         </div>
+
         <WarningAlert className="warning-alert" text={this.state.WarningText} />
         <EventList className="EventList" events={this.state.events} />
         {/*<WelcomeScreen
