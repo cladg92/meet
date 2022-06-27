@@ -116,6 +116,10 @@ input[type="number"] {
   margin-top: 65px;
 }
 
+.recharts-pie {
+  align-self: center;
+}
+
 /*
 
 
