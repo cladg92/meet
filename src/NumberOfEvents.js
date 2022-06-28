@@ -6,9 +6,7 @@ class NumberOfEvents extends Component {
     return (
       <div className="NumberOfEvents">
         <ErrorAlert className="error-alert" text={this.props.errorText} />
-        <label for="number" className="label">
-          Number of events:
-        </label>
+        <label className="label">Number of events:</label>
         <input
           type="number"
           id="number"
