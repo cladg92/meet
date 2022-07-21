@@ -1,6 +1,14 @@
 # meet-app
 
-## Features and Scenarios
+## Description
+
+This project was part of the [Career Foundry Full Stack Web Development course](https://careerfoundry.com/en/courses/become-a-web-developer/).
+
+Serverless, progressive web application (PWA) built using React using a test-driven development (TDD) technique. The app uses the Google Calendar API to fetch and display upcoming events by city.
+
+Check it out live [here](https://cladg92.github.io/meet/).
+
+## Features and Test Scenarios
 
 ### Feature 1: Filter events by city.
 
@@ -70,3 +78,7 @@ User story: As a user I should be able to “Visualize a chart with displayed da
   **Given** the main page is open
   **When** the user clicks on the chart button
   **Then** the user will see a chart with the number of upcoming events in each city
+
+## Technologies
+
+AWS Lambda, OAuth2 Authorization protocol, Jest, Enzyme, Jest-Cucumber, Puppeteer, Atatus
