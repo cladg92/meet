@@ -83,7 +83,7 @@ User story: As a user I should be able to “Visualize a chart with displayed da
 
 - Clone the repository running `git clone https://github.com/cladg92/meet.git` in the terminal.
 - Head to the project folder and install dependencies with `npm install`.
-- Run `npm start` to build and start the application.
+- Run `npm start` to start the development server.
 
 ## Technologies
 
