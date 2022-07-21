@@ -78,6 +78,12 @@ User story: As a user I should be able to “Visualize a chart with displayed da
   **Given** the main page is open
   **When** the user clicks on the chart button
   **Then** the user will see a chart with the number of upcoming events in each city
+  
+## Set up
+
+- Clone the repository running `git clone https://github.com/cladg92/meet.git` in the terminal.
+- Head to the project folder and install dependencies with `npm install`.
+- Run `npm start` to build and start the application.
 
 ## Technologies
 
