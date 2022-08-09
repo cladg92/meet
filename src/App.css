@@ -2,6 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-image: url("C:\Users\Clara Di Gregorio\Desktop\unsplash.jpg");
 }
 
 .App * {
@@ -11,6 +12,10 @@
 ul {
   padding: 0;
   list-style: none;
+}
+
+li {
+  text-align: left;
 }
 
 .page-title {

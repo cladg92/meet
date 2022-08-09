@@ -16,7 +16,6 @@ class Event extends Component {
     return (
       <div className="event">
         <Card className="event-card" key={this.props.event}>
-          <Card.Img variant="top" src="https://picsum.photos/200/100" />
           <Card.Body>
             <Card.Title border="primary" className="summary">
               {this.props.event.summary}
