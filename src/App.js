@@ -177,7 +177,6 @@ class App extends Component {
             </Col>
           </Row>
         </div>
-
         <WarningAlert className="warning-alert" text={this.state.WarningText} />
         <EventList className="EventList" events={this.state.events} />
         <WelcomeScreen
