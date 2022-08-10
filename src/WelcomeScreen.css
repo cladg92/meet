@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   background-image: url("./assets/unsplash.jpg");
+  background-color: rgb(2, 2, 59);
 }
 h1 {
   color: #f5cb42;
