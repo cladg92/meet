@@ -172,7 +172,7 @@ class App extends Component {
             </Col>
             <Col xl={6}>
               <br></br>
-              <h5>Type of events</h5>
+              <h5 className="title-pie">Type of events</h5>
               <EventGenre events={events} />
             </Col>
           </Row>

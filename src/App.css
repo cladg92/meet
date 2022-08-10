@@ -63,6 +63,10 @@ h5 {
   color: whitesmoke;
 }
 
+h5.title-pie {
+  margin-top: -25px;
+}
+
 .Alert {
   position: absolute;
   z-index: 2;
