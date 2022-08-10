@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-image: url("C:\Users\Clara Di Gregorio\Desktop\unsplash.jpg");
+  background-image: url("C:\Users\Clara Di Gregorio\Desktop\Careerfoundry\meet\src\assets\unsplash.jpg");
 }
 
 .App * {
@@ -21,6 +21,7 @@ li {
 .page-title {
   font-weight: 700;
   text-align: center;
+  color: whitesmoke;
 }
 
 .number,
@@ -55,6 +56,11 @@ input[type="number"] {
 .label {
   align-self: center;
   font-weight: 500;
+  color: whitesmoke;
+}
+
+h5 {
+  color: whitesmoke;
 }
 
 .Alert {
