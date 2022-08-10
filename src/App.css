@@ -135,6 +135,9 @@ h5.title-pie {
   overflow: visible;
 }
 
+tspan:hover {
+  font-size: 18px;
+}
 /*
 
 
