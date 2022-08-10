@@ -5,7 +5,7 @@ import { Card } from "react-bootstrap";
 function WelcomeScreen(props) {
   return props.showWelcomeScreen ? (
     <Card className="WelcomeScreen">
-      <Card.Body>
+      <Card.Body className="vertical-center">
         <h1>Welcome to the Meet app</h1>
         <h4>
           Log in to see upcoming events around the world for full-stack

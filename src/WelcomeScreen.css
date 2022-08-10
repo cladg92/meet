@@ -4,7 +4,16 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: white;
+  background-image: url("./assets/unsplash.jpg");
+}
+h1 {
+  color: #f5cb42;
+}
+h4 {
+  color: #fce9ab;
+}
+.vertical-center {
+  margin-top: 10%;
 }
 .login-button {
   color: #494949;
